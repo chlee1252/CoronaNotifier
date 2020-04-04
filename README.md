@@ -10,11 +10,16 @@ The server-side code is in different repository.
 
 The data will update as soon as I get the data from the data sources.
 
--- API URL -- built by me. \n
-https://coronanotifier.herokuapp.com \n
-/getState : getting 51 States Data (include District of Columbia) \n
-/getStateDetail/<stateName>: getting all state county COVID information. \n
-/getCounty/<stateName>/<countyName>: getting one specific county COVID information. \n
+-- API URL -- built by me.
+
+https://coronanotifier.herokuapp.com
+
+/getState : getting 51 States Data (include District of Columbia)
+
+/getStateDetail/<stateName>: getting all state county COVID information.
+
+/getCounty/<stateName>/<countyName>: getting one specific county COVID information.
+
 /getTimeHistory: get COVID time history of US.
 
 
