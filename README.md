@@ -1,16 +1,18 @@
-# corona
+# CoronaNotifier
 
-A new Flutter project.
+A CoronaNotifier application built using Fluutter
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+Simple location base US Corona statistic application. It auto-detects user location to show user's county statistics.
 
-A few resources to get you started if this is your first Flutter project:
+The server-side code is in different repository.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+The data will update as soon as I get the data from the data sources.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-- API URL -- built by me.
+https://coronanotifier.herokuapp.com
+
+### Screenshot
+
+ 
