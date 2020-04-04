@@ -26,8 +26,8 @@ The data will update as soon as I get the data from the data sources.
 
 
 ## Screenshot
-![](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/1.jpeg)
-![](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/2.jpeg)
-![](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/3.jpeg)
-![](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/4.jpeg)
+![ScreenShot1](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/1.jpeg)
+![ScreenShot2](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/2.jpeg)
+![ScreenShot3](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/3.jpeg)
+![ScreenShot4](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/4.jpeg)
  
