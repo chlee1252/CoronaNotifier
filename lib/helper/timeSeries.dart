@@ -1,11 +1,11 @@
 class TimeSeries {
-  String date;
-  int    affected;
-  int    deaths;
+  DateTime date;
+  int    data;
+//  int    deaths;
 
-  TimeSeries({String date, int affected, int deaths}) {
+  TimeSeries({DateTime date, int data, int deaths}) {
     this.date = date;
-    this.affected = affected;
-    this.deaths = deaths;
+    this.data = data;
+//    this.deaths = deaths;
   }
 }

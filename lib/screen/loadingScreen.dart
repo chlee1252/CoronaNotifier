@@ -5,8 +5,6 @@ import 'dashboard.dart';
 
 import '../service/location.dart';
 import '../service/userCounty.dart';
-import '../service/countyService.dart';
-import '../service/stateData.dart';
 
 import '../geoAPI/myAPI.dart';
 import '../geoAPI/geoAPI.dart';
@@ -36,10 +34,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
     var stateName = userCounty.state;
     var countyURL = county_url + "/$stateName/$countyName";
 
-//    var countyService = CountyService(countyURL);
-//    await countyService.getCountyData();
-
-
 
     Navigator.pushReplacement(
       context,
@@ -48,8 +42,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
           return DashBoard(
             userCounty: userCounty,
             countyURL: countyURL,
-//            countyService: countyService,
-//            stateData: stateData.stateData,
           );
         },
       ),

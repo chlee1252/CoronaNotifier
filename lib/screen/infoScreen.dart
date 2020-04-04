@@ -11,6 +11,7 @@ class InfoScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        title: Text("About", style: TextStyle(fontWeight: FontWeight.bold)),
         iconTheme: IconThemeData(
           color: Colors.black,
         ),
@@ -38,7 +39,7 @@ class InfoScreen extends StatelessWidget {
                         //TODO: Change Font Colors
                         new TextSpan(
                           text:
-                              '\n1. RED is Active, BLACK is Death, GREEN is Recovered\n\n',
+                              '\n1. RED is Active, BLACK is Death\n\n',
                           style: TextStyle(
                             color: Colors.black,
                           ),
@@ -54,8 +55,9 @@ class InfoScreen extends StatelessWidget {
                         myText(
                             '6. This data does not contain Diamond Princess.\n\n'),
                         myText('7. This data only contain mainland USA.\n\n'),
+                        myText('8. TimeZone is Eastern Time (EDT)\n\n'),
                         myText(
-                            '8. If you find any bugs or issues or false data, please report to '),
+                            '9. If you find any bugs or issues or false data, please report to '),
                         new TextSpan(
                           text: 'chlee1252@gmail.com',
                           style: TextStyle(

@@ -8,6 +8,8 @@ class CountyService {
   final String uri;
   int affected;
   int deaths;
+  int newAffected;
+  int newDeaths;
   String date;
 
   Future<void> getCountyData() async {
@@ -18,10 +20,12 @@ class CountyService {
     if (response.statusCode == 200) {
       var countyData = jsonDecode(response.body);
 
-      if (countyData.length != 1) {
+      if (countyData != null) {
         affected = countyData['Confirmed'];
         deaths = countyData['Deaths'];
         date = countyData['Last Update'];
+        newAffected = countyData['New Confirmed'];
+        newDeaths = countyData['New Death'];
       }
     }
 

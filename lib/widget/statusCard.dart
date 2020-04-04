@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-Card makeDashBoardItem(Text title, Text number) {
+Card makeDashBoardItem(Text title, Text number, Text newStats) {
   return Card(
     elevation: 1.0,
     margin: new EdgeInsets.all(8.0),
     child: Container(
+      height: 100.0,
       decoration: BoxDecoration(
         color: Color.fromRGBO(220, 220, 220, 1.0),
         borderRadius: BorderRadius.vertical(
@@ -19,12 +20,8 @@ Card makeDashBoardItem(Text title, Text number) {
         ],
       ),
       child: new InkWell(
-        onTap: () {},
         child: Column(
-//          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
-//          mainAxisSize: MainAxisSize.min,
-//          verticalDirection: VerticalDirection.down,
           children: <Widget>[
             Center(
               child: title,
@@ -35,6 +32,9 @@ Card makeDashBoardItem(Text title, Text number) {
             new Center(
               child: number,
             ),
+            newStats.data != '' ? Center(
+              child: newStats,
+            ) : Center(),
           ],
         ),
       ),
@@ -52,3 +52,5 @@ Text titleText(String title, Color color) {
     ),
   );
 }
+
+

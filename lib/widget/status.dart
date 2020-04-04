@@ -3,25 +3,19 @@ import 'package:flutter/material.dart';
 import './statusCard.dart';
 import './chartCard.dart';
 
-class statusSection extends StatelessWidget {
-  statusSection({this.userCounty, this.countyService, this.stateData});
-
-  final double Barheight = 200.0;
+class StatusSection extends StatelessWidget {
+  StatusSection({this.userCounty, this.countyService, this.stateData});
 
   final userCounty;
   final countyService;
   final stateData;
-  var height;
   @override
   Widget build(BuildContext context) {
-//    final double statusBarHeight = MediaQuery.of(context).padding.top;
-//    var height = context.size.height;
     return Container(
-      padding: new EdgeInsets.only(top: 60.0),
       child: SafeArea(
         child: countyService != null
             ? Container(
-              child: Column(
+                child: Column(
                   children: <Widget>[
                     // Location Area
                     Align(
@@ -84,6 +78,9 @@ class statusSection extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text(
                           "Updated: ${countyService.date == null ? stateData[0].date : countyService.date}",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
@@ -92,7 +89,8 @@ class statusSection extends StatelessWidget {
                         horizontal: 2.0,
                       ),
                       child: countyService == null
-                          ? Text('Your County does not have data on dataset yet.')
+                          ? Text(
+                              'Your County does not have data on dataset yet.')
                           : GridView.count(
                               crossAxisCount: 2,
                               childAspectRatio: 1.5,
@@ -109,8 +107,20 @@ class statusSection extends StatelessWidget {
                                               : stateData[0].active.toString())
                                           : countyService.affected == null
                                               ? "0"
-                                              : countyService.affected.toString(),
+                                              : countyService.affected
+                                                  .toString(),
                                       Colors.red),
+                                  titleText(
+                                      userCounty.county == null
+                                          ? (stateData == null
+                                              ? 'Loading...'
+                                              : '↑ ${stateData[0]
+                                                  .newActive
+                                                  .toString()}')
+                                          : (countyService.affected == null)
+                                              ? '- 0'
+                                              : '↑ ${countyService.newAffected.toString()}',
+                                      Colors.blue),
                                 ),
                                 makeDashBoardItem(
                                   titleText("DEATHS", Colors.grey),
@@ -118,11 +128,21 @@ class statusSection extends StatelessWidget {
                                       userCounty.county == null
                                           ? (stateData == null
                                               ? 'Loading...'
-                                              : stateData[0].death.toString())
+                                              :  stateData[0].death.toString())
                                           : countyService.deaths == null
                                               ? '0'
                                               : countyService.deaths.toString(),
                                       Colors.black),
+                                  titleText(
+                                      userCounty.county == null
+                                          ? (stateData == null
+                                          ? 'Loading...'
+                                          : '↑ ${stateData[0].newDeath.toString()}')
+                                          : (countyService.affected == null)
+                                          ? '- 0'
+                                          : '',
+//                                          : '↑ ${countyService.newDeaths.toString()}',
+                                      Colors.blue),
                                 ),
 //                        makeDashBoardItem(
 //                          titleText("RECOVERED", Colors.grey),
@@ -134,7 +154,7 @@ class statusSection extends StatelessWidget {
 //            chartCard(),
                   ],
                 ),
-            )
+              )
             : Center(
                 child: CircularProgressIndicator(
                   valueColor: new AlwaysStoppedAnimation<Color>(Colors.black),
