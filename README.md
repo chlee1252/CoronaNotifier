@@ -12,7 +12,7 @@ The data will update as soon as I get the data from the data sources.
 
 --- Simple API Information --- built by me.
 
-[GO VISIT API] (https://coronanotifier.herokuapp.com).
+[GO VISIT API](https://coronanotifier.herokuapp.com).
 
 /getState : getting 51 States Data (include District of Columbia)
 
