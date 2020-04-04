@@ -152,7 +152,7 @@ class _DashboardState extends State<DashBoard> {
                                 current.state,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 18.0,
+                                  fontSize: 17.0,
                                   color: Colors.black,
                                 ),
                               ),
@@ -160,7 +160,7 @@ class _DashboardState extends State<DashBoard> {
                                 text: TextSpan(
                                   style: TextStyle(
                                     color: Colors.black,
-                                    fontSize: 15.0,
+                                    fontSize: 14.0,
                                     fontWeight: FontWeight.bold,
                                   ),
                                   children: <TextSpan>[
