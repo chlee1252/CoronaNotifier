@@ -32,7 +32,8 @@ dependencies:
   charts_flutter: ^0.9.0
   intl: ^0.16.1
 #  keyboard_visibility: any
-#  auto_size_text: ^2.1.0
+  auto_size_text: ^2.1.0
+
 
 dev_dependencies:
   flutter_test:

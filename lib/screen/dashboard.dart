@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 import '../service/userCounty.dart';
 import '../service/countyService.dart';
@@ -148,16 +149,18 @@ class _DashboardState extends State<DashBoard> {
                           child: Center(
                             child: ListTile(
                               dense: true,
-                              title: Text(
+                              title: AutoSizeText(
                                 current.state,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 17.0,
                                   color: Colors.black,
                                 ),
+                                maxLines: 1,
+                                minFontSize: 5.0,
                               ),
-                              subtitle: RichText(
-                                text: TextSpan(
+                              subtitle: AutoSizeText.rich(
+                                TextSpan(
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 14.0,
@@ -178,6 +181,8 @@ class _DashboardState extends State<DashBoard> {
                                     ),
                                   ],
                                 ),
+                                maxLines: 1,
+                                minFontSize: 5.0,
                               ),
                               trailing: RichText(
                                 text: TextSpan(
