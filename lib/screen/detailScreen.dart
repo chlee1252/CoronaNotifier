@@ -1,8 +1,8 @@
-import 'package:CoronaNotifier/helper/detailInfo.dart';
+import 'package:CoronaNotifier/API/myAPI.dart';
 import 'package:flutter/material.dart';
+import 'package:CoronaNotifier/service/stateDetail.dart';
 
 import '../service/stateDetail.dart';
-import '../geoAPI/myAPI.dart';
 
 class DetailScreen extends StatefulWidget {
   DetailScreen({this.title});
@@ -16,7 +16,7 @@ class _DetailScreenState extends State<DetailScreen> {
   List data;
   List filteredData;
   String title;
-  var _textController = new TextEditingController();
+  TextEditingController _textController = new TextEditingController();
 
   @override
   void initState() {
@@ -32,7 +32,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   Future<List> _getData() async {
     final String url = detail_url + "/${this.title}";
-    var detail;
+    StateDetail detail;
     try {
       detail = StateDetail(url: url);
       await detail.getDetailData();

@@ -2,6 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import '../helper/detailInfo.dart';
+import '../helper/detailInfo.dart';
 
 class StateDetail {
   StateDetail({this.url});
@@ -18,13 +19,13 @@ class StateDetail {
       var data = jsonDecode(response.body);
 
       data.forEach((s) {
-        var name = s['County'];
-        var active = s['Confirmed'];
-        var deaths = s['Deaths'];
-        var date = s['Last Update'];
-        var newActive = s['New Confirmed'];
-        var newDeaths = s['New Death'];
-        var temp = DetailInfo(
+        String name = s['County'];
+        int active = s['Confirmed'];
+        int deaths = s['Deaths'];
+        String date = s['Last Update'];
+        int newActive = s['New Confirmed'];
+        int newDeaths = s['New Death'];
+        DetailInfo temp = DetailInfo(
             active: active,
             death: deaths,
             newActive: newActive,

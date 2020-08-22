@@ -1,14 +1,12 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-import '../geoAPI/myAPI.dart';
-import '../helper/stateInfo.dart';
+import 'package:CoronaNotifier/API/myAPI.dart';
+import 'package:CoronaNotifier/helper/stateInfo.dart';
 
 class StateData {
   List stateData = new List();
 
   Future<void> getStateData() async {
-//    var response;
       var response = await http.get(state_url, headers: {
         "Accept": "application/json",
       });
@@ -16,13 +14,13 @@ class StateData {
         var data = jsonDecode(response.body);
 
         data.forEach((s) {
-          var name = s['state'];
-          var active = s['Confirmed'];
-          var deaths = s['Deaths'];
-          var recovered = 0;
-          var date = s['Last Update'];
-          var newActive = s['New Confirmed'];
-          var newDeaths = s['New Death'];
+          String name = s['state'];
+          int active = s['Confirmed'];
+          int deaths = s['Deaths'];
+          int recovered = 0;
+          String date = s['Last Update'];
+          int newActive = s['New Confirmed'];
+          int newDeaths = s['New Death'];
           var temp = StateInfo(
               active: active,
               death: deaths,
