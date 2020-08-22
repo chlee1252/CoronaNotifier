@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './statusCard.dart';
-import './chartCard.dart';
+import 'package:CoronaNotifier/widget/statusCard.dart';
 
 class StatusSection extends StatelessWidget {
   StatusSection({this.userCounty, this.countyService, this.stateData});
@@ -141,17 +140,11 @@ class StatusSection extends StatelessWidget {
                                           : (countyService.affected == null)
                                           ? '- 0'
                                           : '',
-//                                          : '↑ ${countyService.newDeaths.toString()}',
                                       Colors.blue),
                                 ),
-//                        makeDashBoardItem(
-//                          titleText("RECOVERED", Colors.grey),
-//                          titleText("1234", Colors.green),
-//                        ),
                               ],
                             ),
                     ),
-//            chartCard(),
                   ],
                 ),
               )
