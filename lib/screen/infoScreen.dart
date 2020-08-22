@@ -1,8 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
-import '../helper/launchURL.dart';
-//import 'package:url_launcher/url_launcher.dart';
+import 'package:CoronaNotifier/helper/launchURL.dart';
 
 class InfoScreen extends StatelessWidget {
   @override
@@ -87,10 +85,19 @@ class InfoScreen extends StatelessWidget {
                                   'https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/');
                             },
                         ),
+                        new TextSpan(
+                          text: '- COVID Tracking Project\n',
+                          style: TextStyle(
+                            color: Colors.black,
+                            decoration: TextDecoration.underline,
+                          ),
+                          recognizer: new TapGestureRecognizer()
+                            ..onTap = () {
+                              launchURL(
+                                  'https://covidtracking.com/');
+                            },
+                        ),
                         myText('- Johns Hopkins CSSE\n'),
-                        myText('- WHO\n'),
-                        myText('- CDC USA\n'),
-                        myText('- CSBS\n'),
                         myText('- State and Local Agencies\n'),
 //                        myText('\n\n\n\nStay Inside, we shall overcome.\n'),
                         myText('\n\n\n\n2020 \u00a9 Changhwan Lee'),

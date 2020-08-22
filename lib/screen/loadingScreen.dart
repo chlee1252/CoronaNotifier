@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:CoronaNotifier/API/geoAPI.dart';
+import 'package:CoronaNotifier/API/myAPI.dart';
+import 'package:CoronaNotifier/screen/dashboard.dart';
+import 'package:CoronaNotifier/service/location.dart';
+import 'package:CoronaNotifier/service/userCounty.dart';
 
-import 'dashboard.dart';
-
-import '../service/location.dart';
 import '../service/userCounty.dart';
 
-import '../geoAPI/myAPI.dart';
-import '../geoAPI/geoAPI.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -25,14 +25,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
     Location location = Location();
     await location.getLocation();
 
-    var newURI = url + "lat=${location.lat}&lon=${location.long}";
+    String newURI = url + "lat=${location.lat}&lon=${location.long}";
 
-    var userCounty = UserCounty(newURI);
+    UserCounty userCounty = UserCounty(newURI);
     await userCounty.getCounty();
 
-    var countyName = userCounty.county;
-    var stateName = userCounty.state;
-    var countyURL = county_url + "/$stateName/$countyName";
+    String countyName = userCounty.county;
+    String stateName = userCounty.state;
+    String countyURL = county_url + "/$stateName/$countyName";
 
 
     Navigator.pushReplacement(

@@ -1,9 +1,8 @@
 import 'package:CoronaNotifier/helper/timeSeries.dart';
+import 'package:CoronaNotifier/service/timeData.dart';
+import 'package:CoronaNotifier/widget/chartCard.dart';
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-
-import '../service/timeData.dart';
-import '../widget/chartCard.dart';
 
 class ChartScreen extends StatefulWidget {
   ChartScreen({this.title});
@@ -13,10 +12,8 @@ class ChartScreen extends StatefulWidget {
 }
 
 class _ChartScreenState extends State<ChartScreen> {
-  var title;
+  String title;
   TimeData timeData;
-//  List<TimeSeries> timeAffectedData;
-//  List<TimeSeries> timeDeathData;
 
   @override
   void initState() {
@@ -101,8 +98,7 @@ class _ChartScreenState extends State<ChartScreen> {
           Expanded(
             child: new Padding(
               padding: new EdgeInsets.all(10.0),
-              child: new SizedBox(
-//              height: 300.0,
+              child: new Container(
                 child: chartCard(chart),
               ),
             ),
@@ -110,8 +106,7 @@ class _ChartScreenState extends State<ChartScreen> {
           Expanded(
             child: new Padding(
               padding: new EdgeInsets.all(10.0),
-              child: new SizedBox(
-//              height: 300.0,
+              child: new Container(
                 child: chartCard(deathChart),
               ),
             ),

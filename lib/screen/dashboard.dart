@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:CoronaNotifier/service/userCounty.dart';
+import 'package:CoronaNotifier/service/countyService.dart';
+import 'package:CoronaNotifier/service/stateData.dart';
+import 'package:CoronaNotifier/widget/status.dart';
+import 'package:CoronaNotifier/screen/screens.dart';
 
-import '../service/userCounty.dart';
 import '../service/countyService.dart';
 import '../service/stateData.dart';
-
-import '../widget/status.dart';
-
-import 'loadingScreen.dart';
-import 'infoScreen.dart';
-import 'detailScreen.dart';
-import 'chartScreen.dart';
 
 class DashBoard extends StatefulWidget {
   DashBoard({this.userCounty, this.countyURL});
 
   final userCounty;
   final countyURL;
-//  final countyService;
-//  final stateData;
 
   @override
   _DashboardState createState() => _DashboardState();
@@ -28,7 +23,6 @@ class _DashboardState extends State<DashBoard> {
   List data;
   UserCounty userCounty;
   CountyService countyService;
-//  String timezone;
 
   @override
   void initState() {
@@ -44,11 +38,10 @@ class _DashboardState extends State<DashBoard> {
         this.countyService = data;
       });
     });
-//    print(DateTime.now());
   }
 
   Future<CountyService> _getCountyData() async {
-    var countyService;
+    CountyService countyService;
     try {
       countyService = CountyService(widget.countyURL);
       await countyService.getCountyData();
@@ -60,7 +53,7 @@ class _DashboardState extends State<DashBoard> {
   }
 
   Future<List> _getLastdata() async {
-    var stateD;
+    StateData stateD;
     try {
       stateD = StateData();
       await stateD.getStateData();
