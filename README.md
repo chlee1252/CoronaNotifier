@@ -25,7 +25,7 @@ The data will update as soon as I get the data from the data sources.
 --- Simple API Information Done ---
 
 ## Demo
-![](https://imgur.com/P2jJp4B)
+![](https://i.imgur.com/P2jJp4B.gif)
 
 ## Screenshot
 ![](https://raw.githubusercontent.com/chlee1252/CoronaNotifier/master/images/1.jpeg?token=AK544CTTFAUDW4ZEI7XJ3MS6REJII)
